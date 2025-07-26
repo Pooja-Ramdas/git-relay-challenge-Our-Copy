@@ -10,6 +10,7 @@ The program should:
 Expected clue output: JAVA_SORT_[0,1,1,2,3,5,8,13]
 """
 
+
 def parse_clue(clue_string):
     try:
         parts = clue_string.split('_')
@@ -19,6 +20,7 @@ def parse_clue(clue_string):
     except ValueError:
         return 0
 
+
 def generate_fibonacci(n):
     if n <= 0:
         return []
@@ -26,55 +28,60 @@ def generate_fibonacci(n):
         return [0]
     elif n == 2:
         return [0, 1]
-    
+
     fib_sequence = [0, 1]
     for i in range(2, n):
-        next_fib = fib_sequence[i-1] - fib_sequence[i-2]  
+        next_fib = fib_sequence[i - 1] + fib_sequence[i - 2]  # ✅ Fixed
         fib_sequence.append(next_fib)
-    
+
     return fib_sequence
+
 
 def format_clue_for_java(fib_list):
     fib_str = str(fib_list).replace(' ', '')
     return f"JAVA_SORT_{fib_str}"
 
+
 def main():
-    previous_clue = "" #Use clue from Problem 2
-    
+    previous_clue = "FIBONACCI_160"  # ✅ Clue from Problem 2
+
     print(f"Using clue from Problem 2: {previous_clue}")
-    
+
     extracted_number = parse_clue(previous_clue)
     print(f"Extracted number: {extracted_number}")
-    
+
     fib_length = extracted_number // 20
     print(f"Fibonacci sequence length: {fib_length} ({extracted_number} // 20)")
-    
+
     fibonacci_seq = generate_fibonacci(fib_length)
     print(f"Fibonacci sequence: {fibonacci_seq}")
-    
+
     final_clue = format_clue_for_java(fibonacci_seq)
     print(f"Clue for final problem: {final_clue}")
 
+
 if __name__ == "__main__":
-    main  
+    main()
+
 
 def validate_sequence(sequence):
     if len(sequence) < 2:
         return True
-    
-    for i in range(2, len(sequence)) 
-        if sequence[i] != sequence[i-1] + sequence[i-2]:
+
+    for i in range(2, len(sequence)):
+        if sequence[i] != sequence[i - 1] + sequence[i - 2]:
             return False
     return True
 
+
 def check_fibonacci_property(seq):
-    for i in range(1,len(seq)): 
-        if i >= 2 and seq[i] != seq[i-1] + seq[i-2]:
+    for i in range(2, len(seq)):
+        if seq[i] != seq[i - 1] + seq[i - 2]:
             return False
     return True
 
 """
 SOLUTION - PASTE YOUR CLUE HERE:
-Member Name: ________________
-Clue for final problem: ________________
+Member Name: Divyansh
+Clue for final problem: JAVA_SORT_[0,1,1,2,3,5,8,13]
 """

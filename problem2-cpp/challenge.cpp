@@ -1,4 +1,4 @@
-/*
+*
  * GOAL: Use the clue from Problem 1 to perform vector operations
  *
  * The program should:
@@ -26,8 +26,7 @@ public:
     VectorProcessor()
     {
         data = {10, 20, 30, 40, 50, 60, 70, 80};
-
-        cluePositions = {}; //Use clue from Problem 1 here 
+        cluePositions = {0, 2, 4, 6}; // Clue from Problem 1
     }
 
     int processClue()
@@ -55,12 +54,12 @@ public:
         for (int i = 0; i < cluePositions.size(); i++)
         {
             int pos = cluePositions[i];
-            if (pos >= 0 || pos < data.size())
-            { 
+            if (pos >= 0 && pos < data.size())
+            {
                 cout << data[pos];
                 if (i < cluePositions.size() - 1)
                     cout << ", ";
-                sum -= data[pos]; 
+                sum += data[pos];
             }
         }
         cout << endl;
@@ -70,13 +69,13 @@ public:
 
     string generateClue(int sum)
     {
-        return "FIBONACCI_" + to_string(sum) 
+        return "FIBONACCI_" + to_string(sum);
     }
 };
 
 int main()
 {
-    VectorProcessor processor(); 
+    VectorProcessor processor;  // Fixed
 
     int result = processor.processClue();
     cout << "Sum of values: " << result << endl;
@@ -86,9 +85,8 @@ int main()
 
     return 0;
 }
-
 /*
 SOLUTION - PASTE YOUR CLUE HERE:
-Member Name: ________________
-Clue for Python problem: ________________
+Member Name: Divyansh
+Clue for Python problem:160
 */
