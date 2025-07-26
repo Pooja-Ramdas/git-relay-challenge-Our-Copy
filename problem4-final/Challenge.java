@@ -10,8 +10,6 @@
  */
 
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Challenge {
     
@@ -59,17 +57,17 @@ public class Challenge {
     }
     
     public static void main(String[] args) {
-        String previousClue = ""; //Use clue from Problem 3
+        String previousClue = "[0,1,1,2,3,5,8,13]"; //Use clue from Problem 3
         
         System.out.println("Using clue from Problem 3: " + previousClue);
         
         int[] extractedArray = parseClueArray(previousClue);
-        System.out.println("Extracted array: " + Arrays.toString(extractedArray))  
+        System.out.println("Extracted array: " + Arrays.toString(extractedArray));  
         
         bubbleSort(extractedArray);
         System.out.println("Array after custom sort: " + Arrays.toString(extractedArray));
         
-        displayFinalSolution()  
+        displayFinalSolution();  
     }
 }
 
