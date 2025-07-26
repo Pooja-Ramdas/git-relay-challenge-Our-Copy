@@ -81,7 +81,7 @@ int main()
 }
 
 /*
-SOLUTION - PASTE YOUR CLUE HERE:
-Member Name: ________________
-Clue for C++ problem: ________________
+SOLUTION - PASTE YOUR CLUE HERE: 0, 2, 4, 6
+Member Name: Shayontan Laha
+Clue for C++ problem: 
 */
